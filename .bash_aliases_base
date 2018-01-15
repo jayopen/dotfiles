@@ -1,0 +1,15 @@
+# BASE BASH RUN COMMANDS
+# ----------------------
+
+# General
+alias l='ls -alrth | tail'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# Go Programming aliases
+alias c='cd ~/go/src/github.com/jayopen/'
+
+# Git
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
