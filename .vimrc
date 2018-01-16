@@ -1,5 +1,7 @@
 " VIMRC
 " ----------------------------------
+" HEADER (commands that should come first)
+" ----------------------------------
 set nocompatible
 call pathogen#infect()
 source ~/.vim/regexlist.vim
@@ -34,28 +36,17 @@ set laststatus=2
 highlight clear SignColumn
 
 " ----------------------------------
-" Leader Mappings
-" ----------------------------------
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>eb :vsplit ~/.bashrc<cr>
-nnoremap <leader>f :GoFmt<cr>:GoImports<cr>:w<cr>
-nmap <silent> <leader>, :tabprevious<CR>
-nmap <silent> <leader>. :tabnext<CR>
-nmap <silent> <leader>n :tabnew<CR>
-
-" ----------------------------------
 " Markdown File Format Handling
 " ----------------------------------
 au BufNewFile,BufRead,BufReadPost *.md set filetype=markdown
 au BufNewFile,BufRead,BufReadPost *.md set shiftwidth=4
 au BufNewFile,BufRead,BufReadPost *.md set tabstop=4
 au BufNewFile,BufRead,BufReadPost *.md set foldlevel=255
-"au BufNewFile,BufRead,BufReadPost *.md set wrap
 au BufNewFile *.md r ~/.vim/skeleton.md
 au BufNewFile,BufRead,BufReadPost *.go set tabstop=4
 
 " ----------------------------------
-" Solarized Colorscheme - requires colorscheme to be installed
+" Solarized Colorscheme
 " ----------------------------------
 colorscheme solarized
 let g:solarized_termcolors=256
@@ -64,7 +55,6 @@ let g:solarized_contrast="low"
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 set background=dark
-
 
 " ----------------------------------
 " Airline Configuration
@@ -75,7 +65,7 @@ let g:airline#extensions#tabline#formatted = 'default'
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " ----------------------------------
-" Airline Configuration
+" GitGutter Configuration
 " ----------------------------------
 let g:gitgutter_sign_column_always = 1  "Always show gitgutter
 
@@ -85,6 +75,16 @@ let g:gitgutter_sign_column_always = 1  "Always show gitgutter
 let g:NERDTreeHijackNetrw = 0
 let g:loaded_netrw = 1
 let g:loaded_netrwPlugin = 1
+
+" ----------------------------------
+" Leader Mappings
+" ----------------------------------
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>eb :vsplit ~/.bashrc<cr>
+nnoremap <leader>f :GoFmt<cr>:GoImports<cr>:w<cr>
+nnoremap <silent> <leader>, :tabprevious<CR>
+nnoremap <silent> <leader>. :tabnext<CR>
+nnoremap <silent> <leader>n :tabnew<CR>
 nnoremap <leader>[ :NERDTreeToggle<cr>
 nnoremap <leader>\ :NERDTreeToggle<cr>
 nnoremap <leader>] :TlistToggle<cr>
@@ -125,7 +125,6 @@ imap <C-l> <Esc>"*p
 " Toggle Highlight Search
 noremap <F5> :set hlsearch! hlsearch?<CR>
 
-
 " Duplicate a block of text below
 " CTRL-p: Requires visual selection
 " vmap <C-p> y'>pO<Esc>
@@ -157,16 +156,12 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 nnoremap <C-P>  :tabnext<CR>
 nnoremap <C-o>  :tabprev<CR>
 
-
 " ----------------------------------
 " Incsearch.vim Shortcuts
 " ----------------------------------
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
-
-" This has to be the last (I guess)
-filetype plugin indent on
 
 " ----------------------------------
 " Disabled Configuration
@@ -197,3 +192,10 @@ filetype plugin indent on
 " Change linenumber based on current mode
 "autocmd InsertEnter * :set number | set norelativenumber
 "autocmd InsertLeave * :set relativenumber | set nonumber
+"
+" ----------------------------------
+" FOOTER (commands that should be last)
+" ----------------------------------
+
+" This has to be the last (I guess)
+filetype plugin indent on
