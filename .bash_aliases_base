@@ -6,6 +6,9 @@ alias l='ls -alrth | tail'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+alias alil='vi ~/.bash/.bash_aliases_local'
+alias alib='vi ~/.bash/.bash_aliases_base'
+alias sbash='. ~/.bashrc'
 
 # Go Programming aliases
 alias c='cd ~/go/src/github.com/jayopen/'
@@ -13,3 +16,5 @@ alias c='cd ~/go/src/github.com/jayopen/'
 # Git
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+# TMUX
+alias detach='tmux detach-client'

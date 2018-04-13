@@ -183,11 +183,6 @@ map g/ <Plug>(incsearch-stay)
 "set guicursor+=n-v-c:blinkon0
 "autocmd InsertEnter * set cul
 "autocmd InsertLeave * set nocul
-"let g:Powerline_symbols = 'fancy'
-
-" CTRL-A: Select All
-" (Disabled because CTRL-A is increment)
-"map <C-a> ggVG
 
 " Change linenumber based on current mode
 "autocmd InsertEnter * :set number | set norelativenumber
