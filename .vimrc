@@ -88,6 +88,22 @@ nnoremap <silent> <leader>n :tabnew<CR>
 nnoremap <leader>[ :NERDTreeToggle<cr>
 nnoremap <leader>\ :NERDTreeToggle<cr>
 nnoremap <leader>] :TlistToggle<cr>
+" Extract a specific column.
+noremap <leader>1 :% ! awk '{print $1}'<CR>
+noremap <leader>2 :% ! awk '{print $2}'<CR>
+noremap <leader>3 :% ! awk '{print $3}'<CR>
+noremap <leader>4 :% ! awk '{print $4}'<CR>
+noremap <leader>5 :% ! awk '{print $5}'<CR>
+" Turn lines into comma separated list. Remove trailing comma.
+noremap <leader>c :%s/\n/,/<CR> :s/,$//<CR>
+" Turn lines into space separated list. Remove trailing space.
+noremap <leader><SPACE> :%s/\n/ /<CR> :s/ $//<CR>
+noremap <leader>g :s/$/.net.google.com<CR>
+"Avoid pinky usage
+noremap <leader>w :w<CR>
+noremap <leader>ww :w!<CR>
+noremap <leader>q :q<CR>
+noremap <leader>qq :qa<CR>
 
 " ----------------------------------
 " Keyboard Shortcuts

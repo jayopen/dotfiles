@@ -1,0 +1,26 @@
+! XMODMAP configuration
+! -------------------------------
+! This layout is mainly designed to minimize use of 'weak' fingers and
+! increase ergonomic.
+
+! Swap Ctrl and Alt keys on the keyboard
+! The Ctrl key is a very frequently used key and requires use of predominantly
+! of your left hand pinky finger. Swapping to Alt forces you to use another
+! finger for this key.
+clear control
+clear mod1
+keycode 37 = Alt_L Meta_L
+keycode 64 = Control_L
+add control = Control_L Control_R
+add mod1 = Alt_L Meta_L
+
+! Caps lock is not a key I ever want to hit. Usually I end up hitting this key
+! by mistake. Instead remap this key to tilde, which is located in an even
+! less ergonomic location
+keycode 66 = asciitilde
+
+! Swap semicolon and colon. Colon is frequently used in vim and this makes this
+! key more accessible.
+keycode 47 = colon semicolon
+
+
